@@ -1,6 +1,6 @@
 package org.example.singlelinkedlist.problems.loops;
 
-public class DetectLoopInLinkedListUsingFlag {
+public class DetectLoopUsingFlag {
     static boolean detectLoop(Node h) {
         while (h != null) {
 
