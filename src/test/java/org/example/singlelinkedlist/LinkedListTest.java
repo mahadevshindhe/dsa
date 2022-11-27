@@ -1,4 +1,4 @@
-package org.example.linkedlist;
+package org.example.singlelinkedlist;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -74,9 +74,17 @@ class LinkedListTest {
     }
 
 
+    @Test
+    public void testSizeRC() {
+        insertNodes();
+        assertEquals(3, list.size());
+    }
+
     private void insertNodes() {
         list.insertNodeAtStart(10);
         list.insertNodeAtStart(20);
         list.insertNodeAtStart(30);
     }
+
+
 }
