@@ -1,18 +1,8 @@
-package org.example.linkedlist;
+package org.example.singlelinkedlist;
 
 public class LinkedList {
 
-    Node head;
-
-    class Node {
-        int data;
-        Node next;
-
-        public Node(int data) {
-            this.data = data;
-            this.next = null;
-        }
-    }
+    public Node head;
 
     public void printList() {
         Node node = head;
@@ -69,6 +59,28 @@ public class LinkedList {
             count++;
         }
         return count;
+    }
+
+    public int sizeRC() {
+//        return getCount(head);
+
+        //reursion using constant space
+        return getCountByConstatntSpace(head,0);
+
+    }
+
+    private int getCountByConstatntSpace(Node node, int count) {
+        if (node == null) {
+            return 0;
+        }
+        return getCountByConstatntSpace(node.next, 1 + count);
+    }
+
+    private int getCount(Node node) {
+        if (node == null) {
+            return 0;
+        }
+        return 1 + getCount(node.next);
     }
 
     public void deleteNodeAtStart() {
